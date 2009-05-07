@@ -1,0 +1,19 @@
+# Gambas Project File 2.0
+# Compiled with Gambas 2.12
+Title=kl.am for desktop
+Startup=FMain
+Version=0.0.1
+Library=gb.gtk
+Library=gb.form
+Library=gb.form.dialog
+Library=gb.gtk.ext
+Library=gb.net
+Library=gb.net.curl
+Library=gb.net.smtp
+Library=gb.vb
+Library=gb.web
+TabSize=2
+Translate=1
+Language=es
+ControlPublic=1
+ModulePublic=1

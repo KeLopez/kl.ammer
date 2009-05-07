@@ -1,0 +1,40 @@
+' Gambas class file
+
+PUBLIC SUB _new()
+
+END
+
+PUBLIC SUB Form_Open()
+
+END
+
+PUBLIC SUB Form_Resize()
+
+  vbox1.Width = ME.W
+  
+
+END
+
+PUBLIC SUB Button1_Click()
+
+DIM h AS HttpClient
+DIM klam AS String
+h = NEW httpclient AS "h"
+h.url = "http://kl.am/api/shorten/?url=" & TextBox1.Text & "&format=text&api_key=2f541396409fd746d23e99b003b398cf&utm_source=kl_am_shorter&utm_medium=vb_net&format=text"
+h.async = FALSE
+h.Timeout = 60
+h.Get
+  IF h.Status < 0 THEN
+    TextBox1.text = "ERROR"
+  ELSE
+    IF Lof(h) THEN READ #h, klam, Lof(h)
+    TextBox1.text = klam
+  END IF
+
+END
+
+PUBLIC SUB Timer1_Timer()
+
+    ME.height = 133
+
+END
